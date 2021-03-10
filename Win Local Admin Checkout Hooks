@@ -1,0 +1,17 @@
+$m1=$args[0]
+$u1=$args[1]
+Invoke-Command -ComputerName $m1 -ScriptBlock{Enable-Localuser -Name $Using:u1 } 
+
+$m1=$args[0]
+$u1=$args[1]
+Invoke-Command -ComputerName $m1 -ScriptBlock{Disable-Localuser -Name $Using:u1 } 
+
+$m1=$args[0]
+$u1=$args[1]
+$g1=$args[2]
+Invoke-Command -ComputerName $m1 -ScriptBlock{Remove-LocalGroupMember -Member $Using:u1 -Group $Using:g1 } 
+
+$m1=$args[0]
+$u1=$args[1]
+$g1=$args[2]
+Invoke-Command -ComputerName $m1 -ScriptBlock{Remove-LocalGroupMember -Member $Using:u1 -Group $Using:g1 } 
